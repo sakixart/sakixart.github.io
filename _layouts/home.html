@@ -3,27 +3,41 @@ layout: default
 ---
 
 <header>
-{% if site.theme_config.show_navbar == true %}
+  <!-- {% if site.theme_config.show_navbar == true %}
   {% include horizontal_list.html collection=site.data.home.navbar_entries %}
   <div class="dashed"></div>
-{% endif %}
+  {% endif %} -->
 
   <h1>{{ site.title }}</h1>
   {% if site.theme_config.show_description == true %}
-    <p>{{ site.description }}</p>
+  <p>{{ site.description }}</p>
   {% endif %}
 </header>
 
-{{ content }} 
+{{ content }}
 
 {% if site.theme_config.show_projects == true %}
-  <h2>{{ site.theme_config.home.title_projects }}</h2>
-  {% include card_list.html collection=site.data.home.project_entries %}
+<!-- <h2>{{ site.theme_config.home.title_projects }}</h2> -->
+<img src="/assets/images/portfolio/Portfolio.png" alt="" srcset="" style="border-radius:5%">
+
+<h1>Projects »</h1>
+<h2>Design works</h2>
+<!-- {% include card_list.html collection=site.data.home.project_entries %} -->
+{% include card_list.html collection=site.categories.design %}
+
+
+
+<h2>Material Exploration</h2>
+{% include card_list.html collection=site.categories.material %}
+
+<h2>Skills</h2>
+{% include card_list.html collection=site.categories.skills %}
+
 {% endif %}
 
 {% if site.theme_config.show_misc_list == true %}
-  <h2>{{ site.theme_config.home.title_misc_list }}</h2>
-  {% include vertical_list.html collection=site.data.home.misc_entries %}
+<h2>{{ site.theme_config.home.title_misc_list }}</h2>
+{% include vertical_list.html collection=site.data.home.misc_entries %}
 {% endif %}
 
 <!-- {% if site.theme_config.show_blog == true %}

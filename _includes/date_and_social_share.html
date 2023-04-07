@@ -1,12 +1,12 @@
 <p class="post-date text-bold">
   {% if page.author %}
-    <span class="text-upcase">{{ page.author }}</span> / 
+    <span class="text-upcase">{{ page.author }}</span>
   {% endif %}
-  {% if page.date %}
+  <!-- {% if page.date %}
     <span class="text-upcase">{{ page.date | date: "%B %Y"}}</span>
-  {% endif %}
+  {% endif %} -->
 
-{% if site.theme_config.show_reading_time == true %}
+<!-- {% if site.theme_config.show_reading_time == true %}
   {% capture words %}
   {{ content | number_of_words | minus: 180 }}
   {% endcapture %}
@@ -14,7 +14,7 @@
   {{ words | strip | prepend: '(' | append: ' Words, ' }}
   {{ words | plus: 180 | divided_by: 180 | append: ' Minutes)' }}
   {% endunless %}
-{% endif %}
+{% endif %} -->
 </p>
 
 <div class="soopr-btn"
